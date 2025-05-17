@@ -1,0 +1,29 @@
+{
+	"name": "bookmark-parser",
+	"version": "0.1.0",
+	"type": "module",
+	"license": "MIT",
+	"description": "A parser for bookmark files",
+	"keywords": ["parser", "bookmark"],
+	"author": "Seemant Rajvanshi (https://github.com/seemantr)",
+	"exports": {
+		"import": "./dist/index.js"
+	},
+	"engines": {
+		"node": ">=22.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/node": "22.15.18",
+		"esbuild": "0.25.4",
+		"tsx": "4.19.4",
+		"typescript": "5.8.3"
+	},
+	"dependencies": {},
+	"scripts": {
+		"build": "tsc --noEmit && esbuild src/index.ts --bundle --outfile=dist/index.js --platform=neutral --format=esm --target=es2022 --minify",
+		"format": "biome format --write",
+		"lint": "biome lint --fix",
+		"test": "tsx --test"
+	}
+}
